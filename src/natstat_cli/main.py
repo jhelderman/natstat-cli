@@ -29,12 +29,12 @@ from natstat_cli.util import model_options
 log = logging.getLogger(__name__)
 
 
-@click.group(help="National Statistical")
+@click.group(help="Query the NatStat API")
 def main() -> None:
     pass
 
 
-@main.command(help="Print team codes")
+@main.command(help="Team codes")
 @click.option(
     "--all-pages/--one-page",
     type=bool,
@@ -68,7 +68,7 @@ def leaguecodes(req: LeagueCodesReq, all_pages: bool) -> None:
     write_resp(result, sys.stdout)
 
 
-@main.command(help="Print seasons")
+@main.command(help="Season info")
 @click.option(
     "--all-pages/--one-page",
     type=bool,
